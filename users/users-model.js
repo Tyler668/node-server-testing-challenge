@@ -22,11 +22,17 @@ function findBy(filter) {
 }
 
 async function add(user) {
-  return null;
+  // return null;
 
   // const [id] = await db('users').insert(user);
 
   // return findById(id);
+
+  const [id] = await db('users').insert(user, 'id');
+
+  return db('users')
+  .where ({ id })
+  .first();
 }
 
 function findById(id) {
@@ -38,7 +44,7 @@ function findById(id) {
 }
 
 function remove(id) {
-  return db('schemes')
+  return db('users')
       .where('id', Number(id))
       .del();
 }
