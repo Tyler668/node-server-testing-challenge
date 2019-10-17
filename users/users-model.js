@@ -8,23 +8,30 @@ module.exports = {
 };
 
 function find(dept) {
-  return db('users')
-  .where({department: dept})
-  .select('id', 'username', 'password', 'department');
+  return null;
+  
+  // return db('users')
+  // .where({department: dept})
+  // .select('id', 'username', 'password', 'department');  
 }
 
 function findBy(filter) {
-  return db('users').where(filter);
+  return null;
+  // return db('users').where(filter);
 }
 
 async function add(user) {
-  const [id] = await db('users').insert(user);
+  return null;
 
-  return findById(id);
+  // const [id] = await db('users').insert(user);
+
+  // return findById(id);
 }
 
 function findById(id) {
-  return db('users')
-    .where({ id })
-    .first();
+  return null;
+  
+  // return db('users')
+  //   .where({ id })
+  //   .first();
 }
